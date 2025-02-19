@@ -56,7 +56,7 @@ A Flask-based web application for real-time **temperature and humidity monitorin
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/drkhanusa/temperature-monitoring.git
    cd temperature-monitoring
    ```
 
