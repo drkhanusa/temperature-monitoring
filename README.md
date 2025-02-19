@@ -1,43 +1,46 @@
-# Temperature Monitoring System
+# 🚀 Temperature Monitoring System
 
-A Flask-based web application for monitoring temperature and humidity data with live video feed integration. The system provides real-time sensor data visualization and secure user authentication.
+A Flask-based web application for real-time **temperature and humidity monitoring** with **live video feed integration**. This system provides secure user authentication, interactive data visualization, and seamless database management for efficient monitoring.
 
-## Features
+---
 
-- **User Authentication**
-  - Secure login and registration system
-  - Password hashing for security
-  - Session management
-  - Protected routes
+## 🌟 Features
 
-- **Live Video Feed**
-  - RTSP camera integration
-  - Real-time video streaming
-  - Automatic reconnection on connection loss
-  - Configurable video quality and resolution
+### 🔐 User Authentication
+- Secure **login & registration** system
+- **Password hashing** for enhanced security
+- **Session management** to prevent unauthorized access
+- Protected routes to ensure data security
 
-- **Temperature & Humidity Monitoring**
-  - Real-time sensor data visualization
-  - Interactive charts using Plotly.js
-  - Dual-axis display for temperature and humidity
-  - 24-hour historical data view
-  - Auto-updating every minute
+### 🎥 Live Video Feed
+- **RTSP camera integration** for real-time monitoring
+- Automatic **reconnection** on connection loss
+- **Configurable video quality & resolution**
 
-- **Database Integration**
-  - SQLite database for data storage
-  - Separate tables for user data and sensor readings
-  - Efficient bulk data operations
-  - Timestamp-based data querying
+### 🌡️ Temperature & Humidity Monitoring
+- **Real-time sensor data visualization** 📊
+- **Interactive charts** using Plotly.js
+- Dual-axis **temperature & humidity** display
+- **24-hour historical data view** ⏳
+- Auto-updates **every minute** 🔄
 
-## Project Structure
+### 📦 Database Integration
+- **SQLite database** for efficient data storage
+- Separate tables for **users & sensor readings**
+- **Bulk data operations** for optimized performance
+- **Timestamp-based data querying**
+
+---
+
+## 📂 Project Structure
 
 ```
 .
 ├── app/
-│   ├── __init__.py          # Application factory and extensions
+│   ├── __init__.py          # Application factory & extensions
 │   ├── models.py            # Database models
-│   ├── routes.py            # Application routes and views
-│   ├── static/              # Static files (CSS, JS)
+│   ├── routes.py            # Application routes & views
+│   ├── static/              # Static assets (CSS, JS)
 │   └── templates/           # HTML templates
 ├── instance/                # Instance-specific files
 │   └── app.db              # SQLite database
@@ -47,121 +50,144 @@ A Flask-based web application for monitoring temperature and humidity data with 
 └── run.py                 # Application entry point
 ```
 
-## Installation
+---
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd temperature-monitoring
-```
+## ⚡ Installation
 
-2. Create and activate a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd temperature-monitoring
+   ```
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+2. **Create & activate a virtual environment**:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-4. Configure the application:
-   - Update the RTSP URL in `app/routes.py` if needed:
+3. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure the application**:
+   - Update the **RTSP URL** in `app/routes.py`:
      ```python
      rtsp_url = 'rtsp://admin:password@camera-ip:554/stream'
      ```
-   - Modify database settings in `config.py` if necessary
+   - Modify **database settings** in `config.py` if necessary
 
-5. Initialize the database:
-```bash
-flask db upgrade
-```
+5. **Initialize the database**:
+   ```bash
+   flask db upgrade
+   ```
 
-## Usage
+---
 
-1. Start the application:
-```bash
-python run.py
-```
+## 🚀 Usage
 
-2. Access the web interface:
-   - Open a browser and navigate to `http://localhost:5001`
-   - Register a new account or login with existing credentials
+1. **Start the application**:
+   ```bash
+   python run.py
+   ```
 
-3. Monitor the dashboard:
-   - View live video feed from the connected camera
-   - Monitor temperature and humidity data in real-time
-   - Use the interactive chart to analyze historical data
+2. **Access the web interface**:
+   - Open a browser and navigate to **`http://localhost:5001`**
+   - Register a **new account** or login with existing credentials
 
-## API Endpoints
+3. **Monitor the dashboard**:
+   - 📹 View **live video feed** from the connected camera
+   - 🌡️ Monitor **temperature & humidity** data in real-time
+   - 📊 Use **interactive charts** for historical analysis
 
-- `/login` - User authentication
-- `/register` - New user registration
-- `/video_feed` - Live video stream
-- `/temperature_data` - Get sensor readings
-- `/add_temperature` - Add new temperature reading
-- `/insert_test_data` - Generate sample data for testing
+---
 
-## Dependencies
+## 📡 API Endpoints
 
-- Flask (3.0.2) - Web framework
-- Flask-SQLAlchemy (3.1.1) - Database ORM
-- Flask-Login (0.6.3) - User session management
-- OpenCV Python (4.9.0.80) - Video processing
-- Plotly (5.19.0) - Data visualization
-- Other dependencies listed in requirements.txt
+| Endpoint          | Description |
+|------------------|-------------|
+| `/login`         | User authentication |
+| `/register`      | New user registration |
+| `/video_feed`    | Live video stream |
+| `/temperature_data` | Get sensor readings |
+| `/add_temperature` | Add new temperature reading |
+| `/insert_test_data` | Generate sample test data |
 
-## Development
+---
 
-To run the application in development mode:
+## 📦 Dependencies
+
+- **Flask (3.0.2)** - Web framework
+- **Flask-SQLAlchemy (3.1.1)** - Database ORM
+- **Flask-Login (0.6.3)** - User session management
+- **OpenCV Python (4.9.0.80)** - Video processing
+- **Plotly (5.19.0)** - Data visualization
+- **Other dependencies** listed in `requirements.txt`
+
+---
+
+## 🛠️ Development
+
+To run the application in **development mode**:
 ```bash
 export FLASK_ENV=development
 export FLASK_DEBUG=1
 python run.py
 ```
 
-## Security Considerations
+---
 
-- All routes requiring authentication are protected with @login_required
-- Passwords are hashed using Werkzeug's security functions
-- CSRF protection is enabled by default
-- Session timeout is set to 30 minutes
-- Database queries are protected against SQL injection
+## 🔒 Security Considerations
 
-## Troubleshooting
+- **Authentication-protected routes** with `@login_required`
+- **Password hashing** using Werkzeug security functions
+- **CSRF protection** enabled by default
+- **Session timeout** set to **30 minutes**
+- **Database queries** protected against SQL injection
 
-1. Video Feed Issues:
-   - Verify RTSP URL is correct
-   - Check network connectivity
-   - Ensure OpenCV is properly installed
+---
 
-2. Database Issues:
-   - Check database file permissions
-   - Verify SQLite installation
-   - Check disk space availability
+## 🛠️ Troubleshooting
 
-3. Chart Display Issues:
-   - Clear browser cache
-   - Check browser console for errors
-   - Verify data format in API responses
+### 🎥 Video Feed Issues:
+- Ensure **RTSP URL** is correct
+- Check **network connectivity**
+- Verify **OpenCV installation**
 
-## Contributing
+### 🛢️ Database Issues:
+- Check **file permissions**
+- Ensure **SQLite is installed**
+- Verify **disk space availability**
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+### 📊 Chart Display Issues:
+- Clear **browser cache**
+- Check **browser console** for errors
+- Verify **API response data format**
 
-## License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 🤝 Contributing
 
-## Acknowledgments
+1. **Fork** the repository
+2. **Create** a feature branch
+3. **Commit** your changes
+4. **Push** to your branch
+5. **Create** a **Pull Request** 🛠️
 
-- Flask documentation and community
-- Plotly.js documentation
-- OpenCV Python documentation
-- Bootstrap framework
-- SQLAlchemy documentation 
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** - see the `LICENSE` file for details.
+
+---
+
+## 🙌 Acknowledgments
+
+- 📚 **Flask documentation & community**
+- 📊 **Plotly.js for interactive charts**
+- 🎥 **OpenCV Python for video processing**
+- 🎨 **Bootstrap framework for UI design**
+- 🗄️ **SQLAlchemy for database management**
+
