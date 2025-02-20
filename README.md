@@ -1,6 +1,10 @@
 # 🚀 Temperature Monitoring System
 
-A Flask-based web application for real-time **temperature and humidity monitoring** with **live video feed integration**. This system provides secure user authentication, interactive data visualization, and seamless database management for efficient monitoring.
+<p align="center">
+  <img src="https://github.com/drkhanusa/temperature-monitoring/blob/main/images.jpg"/>
+</p>
+
+A Flask-based web application for real-time **temperature and humidity monitoring** with **live video feed integration**. This system provides secure user authentication, interactive data visualization, and seamless database management for efficient tracking.
 
 ---
 
